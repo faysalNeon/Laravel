@@ -36,9 +36,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
         $this->mapApiRoutes();
-
         $this->mapWebRoutes();
-
         //
     }
 
@@ -49,11 +47,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+    protected function mapWebRoutes(){
+        Route::middleware('web')->namespace($this->namespace)->group(base_path('routes/web.php'));
+        Route::middleware('web')->prefix('student')->namespace($this->namespace.'\Home')->group(base_path('notun/ami.php'));
     }
 
     /**
@@ -65,9 +61,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+        Route::prefix('api')->middleware('api')->namespace($this->namespace)->group(base_path('routes/api.php'));
     }
 }
