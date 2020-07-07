@@ -13,7 +13,7 @@ class mydemo extends Controller
      */
     public function index()
     {
-        echo "index found";
+        return "index found";
     }
 
     /**
