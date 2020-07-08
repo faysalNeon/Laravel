@@ -4,14 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laravel Project</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body>
-
-<h1>notun kicho</h1>
-    <form action="http://127.0.0.1:8000/demo" method="POST"> @csrf
-        <input type="hidden" name="_method" value="delete">
-        <input type="text" name="example">
-        <button type="submit"> submit </button>    
-    </form>
+<main>
+    <section>
+        <h1> Welcome TO Laravel </h1>
+        <a href="{{url('login')}}"> Login </a>
+    </section>
+</main>
 </body>
 </html>
