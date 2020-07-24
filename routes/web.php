@@ -1,6 +1,24 @@
 <?php
-Route::view('/', 'welcome');
+// use Illuminate\Http\Request;
+// Route::get('/', 'HomeController@index')->name('home');
+// Route::get('/{lang?}', function ($lang='en') {
+//     App::setLocale($lang);
+//     return view('language');
+// });
 
-Auth::routes();
+// Route::group(['prefix' => '/{lang?}'], function ($lang='en') {
+//     $language=$lang;
+//     Route::get('/', function () {
+//         return view('language');
+//     });
+// })->middleware('customOne');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::post('/', function (Request $req) {
+//     $req->session()->put('lang',$req->lang);
+//     return redirect('/');
+// });
+
+// Auth::routes();
+
+Route::get('/', 'HomeController@index');
+Route::view('/new', 'language');
