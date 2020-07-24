@@ -49,7 +49,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes(){
         Route::namespace($this->namespace)->middleware('web')->group(base_path('routes/web.php'));
-        Route::middleware('web')->prefix('student')->namespace($this->namespace.'\Home')->group(base_path('notun/ami.php'));
     }
 
     /**
