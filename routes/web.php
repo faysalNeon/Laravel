@@ -1,31 +1,9 @@
 <?php
 
-use App\User;
-use Illuminate\Support\Str;
-
-Route::view('/', 'welcome');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/set',function(){
-    $name = Str::random(5);
-//    User::create([
-//        'name' =>  $name."wootap",
-//        'email' => $name."@wootap.me",
-//        'password' => "12345678"
-//    ]);
-    (new User)->jkono();
-//
-//    foreach (User::active()->get() as $res) {
-//        echo $res->name.' => '.$res->email.' => '.$res->password.' => '.$res->details.' <br/> ------------------------------ <br/>';
-//    }
-//dd(User::all());
+Route::get('/',function (){
+    $data['post']=\App\Post::all();
+    $data['com']=\App\Comment::all();
+    $data['cat']=\App\Category::all();
+    $data['tag']=\App\Tag::all();
+    return view('welcome',compact('data'));
 });
-Route::get('/clear',function(){
-   User::truncate();
-   echo "all user are clear";
-});
-
-

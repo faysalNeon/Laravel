@@ -16,6 +16,9 @@ class UsersTableSeeder extends Seeder
         //     'email'=>"nayem@online.com",
         //     'password'=>Hash::make('nayem@123')
         // ]);
-        factory(App\User::class, 500)->create();
+//        factory(App\User::class, 500)->create();
+//        factory(App\User::class, 500)->create();
+//        factory(App\User::class, 500)->create();
+//        factory(App\User::class, 500)->create();
     }
 }
